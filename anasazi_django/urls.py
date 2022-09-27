@@ -1,4 +1,4 @@
-"""anasazi_django URL Configuration
+"""Ourtizolo_django URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -18,9 +18,9 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-admin.site.site_header='Anasazi Admin Portal'
-admin.site.site_title='Welcome Anasazi admin panel'
-admin.site.index_title='Welcome Anasazi admin panel'
+admin.site.site_header='Ourtizolo Admin Portal'
+admin.site.site_title='Welcome Ourtizolo admin panel'
+admin.site.index_title='Welcome Ourtizolo admin panel'
 
 urlpatterns = [
     path('jet/',include('jet.urls')),
