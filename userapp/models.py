@@ -8,8 +8,6 @@ from django.core.mail import send_mail
 class User(AbstractUser):
     account_type=models.CharField(max_length=150)
     date_of_birth=models.CharField(max_length=150)
-    First_name=models.CharField(max_length=150)
-    Last_name=models.CharField(max_length=150)
     phone_number=models.CharField(max_length=150)
     adress_line1=models.CharField(max_length=150)
     adress_line2=models.CharField(max_length=150)
