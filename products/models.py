@@ -4,6 +4,15 @@ from PIL import Image
 from django.core.files import File
 # Create your models here.
 
+# Create your models here.
+class info(models.Model):
+    email= models.EmailField()
+    first_name= models.CharField(max_length=255)
+    last_name= models.CharField(max_length=255)
+    phone_number= models.CharField(max_length=255)
+    account_type= models.CharField(max_length=255)
+    date = models.DateTimeField(auto_now_add=True, blank=True)
+
 class Category(models.Model):
     name_without_space= models.CharField(max_length=255)
     title= models.CharField(max_length=255)

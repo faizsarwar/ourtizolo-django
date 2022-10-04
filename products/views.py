@@ -1,8 +1,26 @@
-from .serializers import ProductSerializer,CategorySerializer,ProductVariationSerializer
+from .serializers import *
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import Product,Category, ProductVariation
+from .models import *
+from rest_framework import status
+
 # Create your views here.
+
+
+class infoList(APIView):
+    def get(self,request,format=None):
+        Info=info.objects.all()
+        serializer=infoSerializer(Info,many=True)
+        return Response(serializer.data)
+    
+    def post(self,request,format=None):
+            serializer=infoSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(status.HTTP_201_CREATED)
+            return Response(status.HTTP_400_BAD_REQUEST)
+
+
 class ProductList(APIView):
     def get(self,request,format=None):
         products=Product.objects.all()

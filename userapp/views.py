@@ -25,6 +25,22 @@ class UserList(APIView):
                 return Response(status.HTTP_201_CREATED)
             return Response(status.HTTP_400_BAD_REQUEST)
 
+# Create your views here.
+class UserAdvisorList(APIView):
+    def get(self,request,format=None):
+            user=User.objects.all()
+            serializer=UserAdvisorCreateSerializer(user,many=True)
+            return Response(serializer.data)
+
+    def post(self,request,format=None):
+            print(request.data)
+            serializer=UserAdvisorCreateSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(status.HTTP_201_CREATED)
+            return Response(status.HTTP_400_BAD_REQUEST)
+
+# UserAdvisorCreateSerializer
 
 class UserDetail(APIView):
     def get_object(self, pk):

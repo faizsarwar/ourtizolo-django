@@ -11,6 +11,8 @@ class User(AbstractUser):
     phone_number=models.CharField(max_length=150)
     adress_line1=models.CharField(max_length=150)
     adress_line2=models.CharField(max_length=150)
+    advisor_crd_number=models.CharField(max_length=150 , null= True)
+    advisor_role=models.CharField(max_length=150, null= True)
     email = models.EmailField('email address', unique=True)
     approved = models.BooleanField(default=False)
     report= models.FileField(upload_to='pdfs/', null=True, blank=True)
