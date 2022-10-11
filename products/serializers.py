@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category,Product,ProductVariation,info
+from .models import *
 
 class infoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -37,4 +37,22 @@ class CategorySerializer(serializers.ModelSerializer):
 class ProductVariationSerializer(serializers.ModelSerializer):
     class Meta:
         model=ProductVariation
+        fields = '__all__'
+
+
+class BlogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Blog
+        fields=(
+            "id",
+            "tittle",
+            "get_absolute_url",
+            "description",
+            "get_image",
+            "get_thumbnail",
+        )
+
+class FaqSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Faq
         fields = '__all__'

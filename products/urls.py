@@ -8,4 +8,7 @@ urlpatterns = [
     path('category/<str:category>/',ProductCategoryList.as_view()),
     path('category/',CategoryList.as_view()),
     path('product-variations/<int:productID>/',ProductVariationList.as_view()),
+    path('Blogs/',BlogList.as_view()),
+    path('Blogs/<int:pk>/', BlogDetail.as_view()),
+    path('Faqs/',FaqList.as_view())
 ]

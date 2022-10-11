@@ -72,7 +72,7 @@ class Blog(models.Model):
 
 
 
-# admin username: anass@gmail.com, password: perfectcup
+# admin username: deefyinsurancebot@gmail.com , password: perfectcup
 
 def post_save_user(*args,**kwargs):
     user=kwargs['instance']
