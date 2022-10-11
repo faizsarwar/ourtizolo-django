@@ -29,3 +29,8 @@ class BlogSerializer(serializers.ModelSerializer):
             "get_image",
             "get_thumbnail",
         )
+
+class FaqSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Faq
+        fields = '__all__'
