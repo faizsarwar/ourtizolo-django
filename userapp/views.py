@@ -101,3 +101,25 @@ class getReport(APIView):
             return HttpResponse(obj,content_type='application/pdf')
         except :
             return HttpResponse("Document Is Not Available")
+
+
+# Create your views here.
+class BlogList(APIView):
+    def get(self,request,format=None):
+        products=Blog.objects.all()
+        serializer=BlogSerializer(products,many=True)
+        return Response(serializer.data)
+
+
+class BlogDetail(APIView):
+    def get(self, request, pk,format=None):
+        blog=Blog.objects.all().filter(id=pk)
+        serializer = BlogSerializer(blog,many=True)
+        return Response(serializer.data)
+
+# Create your views here.
+class FaqList(APIView):
+    def get(self,request,format=None):
+        products=Faq.objects.all()
+        serializer=FaqSerializer(products,many=True)
+        return Response(serializer.data)

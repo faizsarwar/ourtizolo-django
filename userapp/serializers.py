@@ -17,3 +17,15 @@ class UserLoginSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['username','password']
+
+class BlogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Blog
+        fields=(
+            "id",
+            "tittle",
+            "get_absolute_url",
+            "description",
+            "get_image",
+            "get_thumbnail",
+        )
